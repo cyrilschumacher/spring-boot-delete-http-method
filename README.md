@@ -15,7 +15,16 @@ To begin cloning the directory and open it with your favorite IDE. Download Mave
 
 After the Spring application is executed, execute the following commands **CURL**:
 
-	curl -X DELETE -H "Cache-Control: no-cache" -H "Postman-Token: 70b4a53f-354b-2c7e-dc9a-58c165a3d082" -H "Content-Type: application/x-www-form-urlencoded" -d 'firstname=John&lastname=Doe' http://localhost:8080/
+	curl -X DELETE -H "Cache-Control: no-cache" -H "Content-Type: application/x-www-form-urlencoded" -d 'firstname=John&lastname=Doe' http://localhost:8080/
+
+Or pasting the following **HTTP request**:
+
+	DELETE / HTTP/1.1
+	Host: localhost:8080
+	Cache-Control: no-cache
+	Content-Type: application/x-www-form-urlencoded
+	
+	firstname=John&lastname=Doe
 
 This CURL command will return you the **result of the DELETE resource**:
 
@@ -27,6 +36,8 @@ This CURL command will return you the **result of the DELETE resource**:
 		"message": "No message available",
 		"path": "/"
 	}
+
+The result is the same if you use an **HTTP multipart request**. Against by, if the **with_body** resource is used. No exceptions will be generated.
 
 ## Copyright and license
 

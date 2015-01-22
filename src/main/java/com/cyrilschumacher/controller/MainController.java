@@ -32,6 +32,17 @@ public class MainController {
         }
     }
 
+    /**
+     * Asserts that the model are not null.
+     * *
+     * @param model The model.
+     */
+    private void assertModel(String model) {
+        if ((model == null) || (model.isEmpty())) {
+            throw new IllegalArgumentException();
+        }
+    }
+
     //</editor-fold>
 
     /**
@@ -64,6 +75,7 @@ public class MainController {
     @RequestMapping(value = "with_body/", method = RequestMethod.DELETE)
     public void delete(@RequestBody String body) {
         // It's work.
+        assertModel(body);
     }
 
     //</editor-fold>
