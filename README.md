@@ -14,8 +14,9 @@ Why try to put data in the body of the request? I am currently working on a proj
 To begin cloning the directory and open it with your favorite IDE. Download Maven dependencies and run the Spring application.
 
 After the Spring application is executed, execute the following commands **CURL**:
-
+```shell
 	curl -X DELETE -H "Cache-Control: no-cache" -H "Content-Type: application/x-www-form-urlencoded" -d 'firstname=John&lastname=Doe' http://localhost:8080/
+```
 
 Or pasting the following **HTTP request**:
 
@@ -27,7 +28,7 @@ Or pasting the following **HTTP request**:
 	firstname=John&lastname=Doe
 
 This CURL command will return you the **result of the DELETE resource**:
-
+```json
 	{
 		"timestamp": 1421952956195,
 		"status": 500,
@@ -36,7 +37,7 @@ This CURL command will return you the **result of the DELETE resource**:
 		"message": "No message available",
 		"path": "/"
 	}
-
+```
 The result is the same if you use an **HTTP multipart request**. Against by, if the **with_body** resource is used. No exceptions will be generated.
 
 ## Copyright and license
